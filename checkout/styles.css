@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+
+.search {
+    width: 343px;
+    height: 58px;
+    background-color: white;
+    border-radius: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search > div > img {
+    width: 43px;
+    height: 43px;
+    margin: 0 15px 0 0;
+}
+
+.left-side > svg {
+    margin: 0 25px 0 25px;
+}
+
+.menu > path {
+    fill: white;
+}
+
+.content{
+    background-color: white;
+    height: calc(100vh - 85px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-side{
+    display: flex;
+    align-items: center;
+}  
+
+.shipping{
+    width: 360px;
+    height: 407px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #8492A6;
+    color: #47525E;
+}
+
+.shipping > h2:nth-child(1){
+    margin: 30px 0 70px 0;
+}
+
+form > input {
+    width: 265px;
+    height: 30px;
+    border:  1px solid #8492A6;
+}
+
+form > input:nth-child(2){
+    margin: 0 0 70px 0;
+}
+
+.product {
+    display: flex;
+    width: 1250px;
+    padding: 0 0  0 50px;
+    justify-content: space-between;
+}
+
+.left-arrow {
+    width: 100px;
+    height: 100px;
+}
+
+.card-selection{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #8492A6;
+}
+
+.card-selection > div {
+    width: 220px;
+}
+
+.card-selection > div:nth-child(1){
+    height: 30px;
+    border-bottom: 1px solid #8492A6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.card-selection > div:nth-child(2){
+    height: 60px;
+    
+}
+
+.card-selection > div:nth-child(2) > div{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #8492A6;
+}
+
+.card-selection > div:nth-child(2) > div:last-child{
+    height: 30px;
+    border: none;
+}
+
+.product-details{
+    display: flex;
+    height: 309px;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 30px 0 0;
+}
+
+.quantity{
+    display: flex;
+    align-items: center;
+}
+
+.quantity > div:first-child{
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 0;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #8492A6;
+}
+
+.quantity > div:last-child{
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 10px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #8492A6;
+}
+
+.top-bar{
+    width: 100%;
+    height: 85px;
+    justify-content: space-between;
+    background-color: #13CE66;
+    display: flex;
+    align-items: center;
+}
+
+.confirm{
+    width: 258px;
+    height: 67px;
+    color: white;
+    background-color: #13CE66;
+    border: none;
+    border-radius: 4px;
+    margin: 0 20px 0 0;
+    align-self: center;
+    font-size: 25px;
+}
+
+.payment{
+    display: flex;
+    margin: 20px 0 0 0;
+    width: 1250px;
+    justify-content: space-between;
+}
+
+.dropdow-icon {
+    width: 20px;
+    height: 20px;
+    align-self: center;
+    margin: 5px 0 0 0;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-details > div:first-child > input{
+    height: 30px;
+}
+
+.card-details > div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-details > div:nth-child(2) > input{
+    margin: 20px 0 0 0;
+    width: 60px;
+    height: 30px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 430px;
+    margin: 30px 0 0 0;
+}
+
+.payment-card{
+    width: 520px;
+    height: 213px;
+    margin: 0 0 0 20px;
+    border: 1px solid #8492A6;
+    display: flex;
+    align-items: center;
+    padding: 30px 0 0 0;
+    flex-direction: column;
+}
+
+div > input{
+    color: #8190A5;
+    padding: 0 0 0 5px;
+}

@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+
+.search {
+    width: 343px;
+    height: 58px;
+    background-color: white;
+    border-radius: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search > div > img {
+    width: 43px;
+    height: 43px;
+    margin: 0 15px 0 0;
+}
+
+.left-side > svg {
+    margin: 0 25px 0 25px;
+}
+
+.menu > path {
+    fill: white;
+}
+
+form > input {
+    border: 1px solid #8492A6;
+    width: 456px;
+    height: 50px;
+}
+
+input[type="button"]{
+    border: none;
+    background-color: #13CE66;
+    font-size: 39px;
+    color: white;
+    height: 70px;
+}
+
+.content{
+    background-color: white;
+    height: calc(100vh - 85px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  
+}
+
+.content > img {
+    position: absolute;
+    z-index: 1;
+    width: 795px;
+    height: 795px;
+    opacity: 0.27;
+}
+
+.first-carousel-images > img {
+    width: 187px;
+    height: 187px;
+    margin: 0 140px 0 0;
+}
+
+h2{
+    font-family: Roboto;
+    font-weight: normal;
+    color: #47525E;
+}
+
+.content > h2 {
+    text-align: center;
+    font-size: 32px;
+    font-family: Roboto;
+    color: #969FAA;
+    margin: 40px 0 40px 0;
+    width: 608px;
+    align-self: center;
+}
+
+.left-side{
+    display: flex;
+    align-items: center;
+}
+
+form{
+    opacity: 1;
+    position: absolute;
+    z-index: 2;
+}    
+
+.top-bar{
+    width: 100%;
+    height: 85px;
+    justify-content: space-between;
+    background-color: #13CE66;
+    display: flex;
+    align-items: center;
+}
+
+.first-carousel{
+    display: flex;
+    height: 200px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.second-carousel{
+    display: flex;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right-arrow {
+    width: 100px;
+    height: 100px;
+}
+
+.left-arrow {
+    width: 100px;
+    height: 100px;
+}
+
+.first-carousel-images{
+    margin: 0 0 0 50px;
+}
+
+.second-carousel-images{
+    margin: 0 0 0 50px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.second-carousel-images > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.second-image-container{
+    color: #47525E;
+    font-size: 26px;
+    align-items: center;
+    margin: 0 150px 0 0;
+}
+
+.second-image-container > img{
+    border-radius: 50%;
+    width: 187px;
+    height: 187px;
+}
