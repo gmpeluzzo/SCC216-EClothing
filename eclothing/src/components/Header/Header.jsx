@@ -9,7 +9,6 @@ const Header = () => {
     const ref = useRef();
 
     const handleOutsideClick = (e) => {
-        console.log(e)
         if(visibility && ref.current && !ref.current.contains(e.target)) {
             setVisibility(false);
         }
