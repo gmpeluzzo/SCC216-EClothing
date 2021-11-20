@@ -26,10 +26,7 @@ export const simpleStyles = {
         "height": 416,
       },
       sizeButton: {
-        "width": 52,
-        "height": 20,
-        "textAlign": "center",
-        "border": "1px solid #47525E",
+
       }
 }
 
@@ -56,7 +53,8 @@ export const ProductDetailsDiv = styled.div`
     flex-direction: column;
 `;
 
-export const AddToCartButton = styled.div`
+export const AddToCartButton = styled.button`
+    text-align: center;
     width: 193px;
     height: 50px;
     border: none;
@@ -73,5 +71,13 @@ export const Sizes = styled.div`
     border: 1px solid #47525E;
     margin: 0 0 50px 0;
     width: 160px;
+`;
+
+export const SizeButton = styled.button`
+  width: 52px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #47525E;
+  background-color: ${props => props.selected ? "#13CE66": "white"};
 `;
 
