@@ -14,16 +14,26 @@ left: 5%;
 overflow:auto;
 `
 
-const CartSummary = () => {
+const CartSummary = ({cart, setCart}) => {
+
+    const removeFromCartHandler = (id) => {
+        const product = cart.find(prod => prod.id === id)
+        product.quantity--
+        if (product.quantity === 0) {
+            cart.splice(cart.indexOf(product), 1)
+        }
+        setCart(cart)
+    }
+
+    const addToCartHandler = (id) => {
+        const product = cart.find(prod => prod.id === id)
+        product.quantity++
+        setCart(cart)
+    }
 
     return (
         <SummaryWrapper>
-            <MiniProduct name="Bin" price="3" quantity="2"/><br/><br/><br/><br/><br/>
-            <MiniProduct name="Bin" price="3" quantity="2"/><br/><br/><br/><br/><br/>
-            <MiniProduct name="Bin" price="3" quantity="2"/><br/><br/><br/><br/><br/>
-            <MiniProduct name="Bin" price="3" quantity="2"/><br/><br/><br/><br/><br/>
-            <MiniProduct name="Bin" price="3" quantity="2"/><br/><br/><br/><br/><br/>
-            <MiniProduct name="Bin" price="3" quantity="2"/><br/><br/><br/><br/><br/>
+            {cart.map(product => <MiniProduct product={product} addToCartHandler={addToCartHandler} removeFromCartHandler={removeFromCartHandler}/>)}
         </SummaryWrapper>
     );
 }
