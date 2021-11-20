@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import ModaInfaltil from "../LoginContainer/modaInfantil.jpeg"
 
 const ProductWrapper = styled.div`
 width: 90%;
@@ -47,16 +46,18 @@ const Image = styled.img`
 `
 
 const MiniProduct = (props) => {
-    const { imgsrc, name, price, quantity } = props;
+    const { id, image, name, price, quantity } = props.product;
+    const { addToCartHandler, removeFromCartHandler} = props
+
     return (
         <ProductWrapper>
-            <Image src={ModaInfaltil}/>
+            <Image src={image}/>
             <Label>{name}</Label>
-            <Label>{'$' + price}</Label>
+            <Label>{price}</Label>
             <ControlQuantity>
-                <QuantityButtons>-</QuantityButtons>
+                <QuantityButtons onClick={() => removeFromCartHandler(id)}>-</QuantityButtons>
                 <Label>{quantity}</Label>
-                <QuantityButtons>+</QuantityButtons>
+                <QuantityButtons onClick={() => addToCartHandler(id)}>+</QuantityButtons>
             </ControlQuantity>
         </ProductWrapper>
     )

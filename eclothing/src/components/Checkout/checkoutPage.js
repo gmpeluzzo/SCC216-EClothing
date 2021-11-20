@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ShippingForm from "./shipping";
 import PaymentForm from "./payment";
 import styled from "styled-components";
@@ -20,9 +20,16 @@ const FinishPurchase = styled.button`
 
 const CheckoutPage = () => {
 
+    const [cart, setCartState] = useState(JSON.parse(localStorage.getItem('cart')));
+
+    const setCart = (cart) => {
+        setCartState(cart);
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
     return (
         <div className="checkoutEssentials" style={{overflow:'auto'}}>
-            <CartSummary/>
+            <CartSummary cart={cart} setCart={setCart}/>
             <PaymentForm/>
             <ShippingForm/>
             <FinishPurchase>Confirm Purchase</FinishPurchase>
