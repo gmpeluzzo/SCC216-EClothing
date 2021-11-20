@@ -1,22 +1,38 @@
-import { simpleStyles as Styles, AddToCartButton, Container, Product, ProductDetailsDiv, Sizes } from "./styles"
-import Clothing7 from "../../images/roupa7.jpg"
+import { useState } from "react"
+import { simpleStyles as Styles, AddToCartButton, Container, Product, ProductDetailsDiv, Sizes, SizeButton } from "./styles"
 
 const ProductDetails = ({product}) => {
+  const [selectedSize, setSelectedSize] = useState("P")
+
+  const addToCartHandler = () => {
+    let cart = JSON.parse(localStorage.getItem("cart"))
+    if(cart) {
+      if(!cart.find((item) => item.id === product.id)) {
+        cart.push({...product, quantity: 1, size: selectedSize})
+      }
+    } else {
+      cart = [{...product, quantity: 1, size: selectedSize}]
+    }
+    localStorage.setItem("cart", JSON.stringify(cart))
+    // navigate("/checkout")
+    console.log(localStorage.getItem("cart"))
+  }
+
   return (
     <Container>
       <Product>
-        <img src={Clothing7} alt="roupa7" style={Styles.productImg}/>
+        <img src={product.image} alt="roupa7" style={Styles.productImg}/>
         <ProductDetailsDiv>
           <h2 style={Styles.nameH2}>{product.name}</h2>
           <p style={Styles.priceParagraph}>{product.price}</p>
           <p style={Styles.secondParagraph}>Size</p>
           <Sizes>
-            <div style={Styles.sizeButton}>P</div>
-            <div style={Styles.sizeButton}>M</div>
-            <div style={Styles.sizeButton}>G</div>
+            <SizeButton selected={selectedSize === "P"} onClick={() => setSelectedSize("P")}>P</SizeButton>
+            <SizeButton selected={selectedSize === "M"} onClick={() => setSelectedSize("M")}>M</SizeButton>
+            <SizeButton selected={selectedSize === "G"} onClick={() => setSelectedSize("G")}>G</SizeButton>
           </Sizes>
           <p style={Styles.thirdParagraph}>{product.description}</p>
-          <AddToCartButton>Add to Cart</AddToCartButton>
+          <AddToCartButton onClick={addToCartHandler}>Add to Cart</AddToCartButton>
         </ProductDetailsDiv>
       </Product>
     </Container>
