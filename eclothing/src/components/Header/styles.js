@@ -10,20 +10,21 @@ export const Container = styled.div`
     outline: 0;
     position: relative;
     border: none;
-    justify-content: space-between;
+    justify-content: ${props => props.shouldDisplay ? 'center' : 'space-between'};
     box-sizing: border-box;
 `
 
 export const LeftSideContainer = styled.div`
     height: 100%
     width: auto;
-    display: flex;
-    align-items: center;
+    display: ${props => !props.shouldDisplay ? 'flex' : 'none'};
+    align-items: center;    
 `;
 
 export const LogoutIcon = styled.div`
     width: 48px;
     height: 48px;
+    display: ${props => !props.shouldDisplay ? 'block' : 'none'};
     background-image: url(${props => props.imgUrl});
     background-position: center;
     background-repeat: no-repeat;
@@ -41,6 +42,10 @@ export const MenuButton = styled.div`
 export const SearchInput = styled.input`
     width: 343px;
     height: 58px;
+    padding: 0 20px;
+    font-family: Roboto;
+    font-size: 24px;
+    color: #969FAA;
     background-color: white;
     border-radius: 88px;
     display: flex;
@@ -57,7 +62,16 @@ export const MenuPanel = styled.div`
     position: absolute;
     background: white;
     Width: 300px;
+    box-sizing: border-box;
     border: 1px solid black;
     top: 0;
     transition: all 0.5s ease-out;
+
+`;
+
+export const Text = styled.div`
+    font-size: 40px;
+    display: ${props => props.shouldDisplay ? 'inline-flex' : 'none'};
+    font-family: Roboto;
+    color: white;
 `;

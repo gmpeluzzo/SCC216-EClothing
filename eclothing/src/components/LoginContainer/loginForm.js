@@ -1,6 +1,7 @@
 import React from "react";
-import background from "./watermark.jpg"
-import styled from "styled-components"
+import background from "./watermark.jpg";
+import styled from "styled-components";
+import { Link, useLocation } from 'react-router-dom';
 
 const Form = styled.form`
     opacity: 1;
@@ -49,6 +50,7 @@ const Label = styled.h2`
 `;
 
 const LoginForm = () => {
+    const location = useLocation();
 
     return (
         <Wrapper className="formWrapper">
@@ -57,7 +59,9 @@ const LoginForm = () => {
                 <TextField type="text" className="login"/><br/>
                 <Label>Password</Label>
                 <TextField type="password" className="password"/> <br/><br/><br/>
-                <Button type="submit" value="Sign in" class="button"/>
+                <Link to={'/carousel'}>
+                    <Button type="submit" value="Sign in" class="button"/>
+                </Link>
             </Form>
             <Image src={background}/>
         </Wrapper>

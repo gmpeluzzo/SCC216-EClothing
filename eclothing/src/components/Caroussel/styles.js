@@ -43,6 +43,11 @@ export const OutsideContainer = styled.div`
 
     & .slick-slide.slick-active > div > div {
         outline: none;
+        box-sizing: border-box;
+    }
+
+    & .slick-slide.slick-active > div > div:hover {
+        border: 1px solid #969FAA;
     }
 `;
 
