@@ -23,7 +23,7 @@ const Header = () => {
         if (location.pathname === '/')
             setIsLoginPage(true);
         else
-            setIsLoginPage(false);
+            setIsLoginPage(false);  
 
         return () => {
             document.removeEventListener('mousedown', handleOutsideClick)
