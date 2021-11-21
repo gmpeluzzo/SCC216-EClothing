@@ -11,6 +11,7 @@ import ModaMasculina from '../../images/modamasculina.jpg'
 import Infantil from '../../images/modaInfantil.jpeg'
 import ModaCasa from '../../images/modaCasa.jpg'
 import Acessórios from '../../images/acessorios.jpg'
+import { Link } from 'react-router-dom';
 
 
 
@@ -19,9 +20,11 @@ import "slick-carousel/slick/slick-theme.css";
 
 const getImages = (imgArray, rounded) => {
     return imgArray.map(
-        (img) =>
+        (img,index) =>
             <div>   
-                <Content isRounded={rounded} imgUrl={img}/>
+                <Link to={'/product/' + (index+1)}>
+                    <Content isRounded={rounded} imgUrl={img}/>
+                </Link>
             </div>
         );
 }
