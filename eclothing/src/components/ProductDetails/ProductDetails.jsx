@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { simpleStyles as Styles, AddToCartButton, Container, Product, ProductDetailsDiv, Sizes, SizeButton } from "./styles"
+import { Link } from 'react-router-dom';
 
 const ProductDetails = ({product}) => {
   const [selectedSize, setSelectedSize] = useState("P")
@@ -32,7 +33,9 @@ const ProductDetails = ({product}) => {
             <SizeButton selected={selectedSize === "G"} onClick={() => setSelectedSize("G")}>G</SizeButton>
           </Sizes>
           <p style={Styles.thirdParagraph}>{product.description}</p>
-          <AddToCartButton onClick={addToCartHandler}>Add to Cart</AddToCartButton>
+          <Link to={'/product/checkout'}>
+            <AddToCartButton onClick={addToCartHandler}>Add to Cart</AddToCartButton>
+          </Link>
         </ProductDetailsDiv>
       </Product>
     </Container>

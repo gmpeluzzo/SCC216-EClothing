@@ -8,22 +8,35 @@ import {
   useRoutes} from "react-router-dom";
 import CarousselPage from './components/CarousselPage';
 import LoginForm from './components/LoginContainer';
+import ProductDetails from './components/ProductDetails';
+import CheckoutPage from './components/Checkout';
+import product from './products';
 
 const AppRoutes = () => {
   let routes = useRoutes([
     {path: '/', element: <LoginForm/>},
     {path: '/carousel', element: <CarousselPage/>},
+    {path: '/product/1', element: <ProductDetails product={product[1]}/>},
+    {path: '/product/2', element: <ProductDetails product={product[2]}/>},
+    {path: '/product/3', element: <ProductDetails product={product[4]}/>},
+    {path: '/product/4', element: <ProductDetails product={product[6]}/>},
+    {path: '/product/5', element: <ProductDetails product={product[7]}/>},
+    {path: '/product/checkout', element: <CheckoutPage/>},
   ]);
 
   return routes;
 }
 
 const AppContainer = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   overflow: hidden;
+  & >  div:nth-child(2) {
+    justify-content: center;
+  }
+
 `;
-
-
 
 function App() {
   return (
