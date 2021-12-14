@@ -11,6 +11,7 @@ import LoginForm from './components/LoginContainer';
 import ProductDetails from './components/ProductDetails';
 import CheckoutPage from './components/Checkout';
 import product from './products';
+import GlobalState from './components/Context/GlobalState';
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -42,7 +43,9 @@ function App() {
   return (
     <AppContainer>
       <Header/>
-      <AppRoutes/>
+      <GlobalState>
+        <AppRoutes/>
+      </GlobalState>
     </AppContainer>
     
   );

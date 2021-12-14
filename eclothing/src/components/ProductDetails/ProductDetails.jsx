@@ -1,22 +1,16 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { simpleStyles as Styles, AddToCartButton, Container, Product, ProductDetailsDiv, Sizes, SizeButton } from "./styles"
 import { Link } from 'react-router-dom';
+import ShopContext from "../Context/shop-context";
 
 const ProductDetails = ({product}) => {
+  const { addProductToCart, cart } = useContext(ShopContext)
+
   const [selectedSize, setSelectedSize] = useState("P")
 
   const addToCartHandler = () => {
-    let cart = JSON.parse(localStorage.getItem("cart"))
-    if(cart) {
-      if(!cart.find((item) => item.id === product.id)) {
-        cart.push({...product, quantity: 1, size: selectedSize})
-      }
-    } else {
-      cart = [{...product, quantity: 1, size: selectedSize}]
-    }
-    localStorage.setItem("cart", JSON.stringify(cart))
-    // navigate("/checkout")
-    console.log(localStorage.getItem("cart"))
+    addProductToCart({...product, size: selectedSize})
+    console.log(cart)
   }
 
   return (

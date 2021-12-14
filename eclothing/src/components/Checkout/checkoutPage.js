@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import ShippingForm from "./shipping";
 import PaymentForm from "./payment";
 import styled from "styled-components";
 import CartSummary from "./cart";
+import ShopContext from "../Context/shop-context";
 
 const FinishPurchase = styled.button`
     color:white;
@@ -19,17 +20,11 @@ const FinishPurchase = styled.button`
 `
 
 const CheckoutPage = () => {
-
-    const [cart, setCartState] = useState(JSON.parse(localStorage.getItem('cart')));
-
-    const setCart = (cart) => {
-        setCartState(cart);
-        localStorage.setItem('cart', JSON.stringify(cart));
-    }
+    const { cart, addProductToCart, removeProductFromCart } = useContext(ShopContext);
 
     return (
         <div className="checkoutEssentials" style={{overflow:'auto'}}>
-            <CartSummary cart={cart} setCart={setCart}/>
+            <CartSummary cart={cart} addProductToCart={addProductToCart} removeProductFromCart={removeProductFromCart}/>
             <PaymentForm/>
             <ShippingForm/>
             <FinishPurchase>Confirm Purchase</FinishPurchase>

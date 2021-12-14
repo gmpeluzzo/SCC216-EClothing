@@ -5,7 +5,6 @@ const ProductWrapper = styled.div`
 width: 90%;
 height: 15%;
 flex-direction: row;
-position: absolute;
 display: flex;
 left: 5%;
 justify-content: space-between;

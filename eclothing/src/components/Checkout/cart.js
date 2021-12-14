@@ -14,21 +14,14 @@ left: 5%;
 overflow:auto;
 `
 
-const CartSummary = ({cart, setCart}) => {
+const CartSummary = ({cart, addProductToCart, removeProductFromCart}) => {
 
     const removeFromCartHandler = (id) => {
-        const product = cart.find(prod => prod.id === id)
-        product.quantity--
-        if (product.quantity === 0) {
-            cart.splice(cart.indexOf(product), 1)
-        }
-        setCart(cart)
+        removeProductFromCart(id)
     }
 
     const addToCartHandler = (id) => {
-        const product = cart.find(prod => prod.id === id)
-        product.quantity++
-        setCart(cart)
+        addProductToCart({ id })
     }
 
     return (
