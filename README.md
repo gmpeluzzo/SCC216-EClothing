@@ -25,7 +25,46 @@ This repository was created to maintain version control of an e-commerce applica
 ## Project Report
  
 ### Requirements:
- No other requirements have been added for now.
+#### NPM 
+ Install node and npm on your computer [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
+ #### Docker
+ Docker page [here](https://docs.docker.com/engine/install/#server)
+
+ Install Docker on your Linux running this commands:
+  - To update your packages:
+  ```
+sudo apt update
+  ```
+
+  - To remove last version of docker if exists: 
+  ```
+  sudo apt remove docker docker-engine docker.io
+  ```
+
+  - To install docker: 
+  ```
+  sudo apt install docker.io
+  ```
+
+  - To start docker: 
+  ```
+  sudo systemctl start docker
+  ```
+
+  - To enable docker as soon as your computer starts: 
+  ```
+  sudo systemctl start docker 
+  ```
+
+  - To check if docker is installed: 
+  ```
+  docker --version
+  ```
+
+#### Docker Compose
+how to install docker-compose [here](https://docs.docker.com/compose/install/)
+    
 
 ### Project Description:
  [Work in progress] No implmentations was done, just mockups.
