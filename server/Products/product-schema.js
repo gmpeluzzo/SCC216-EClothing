@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const carroSchema = new Schema({
+const productSchema = new Schema({
   id: {
     type: String,
     unique: true,
@@ -13,7 +13,8 @@ const carroSchema = new Schema({
   },
   price: {
     type: Number,
-    require: true
+    require: true,
+    default: 1
   },
   descripion: {
     type: String,
@@ -21,4 +22,4 @@ const carroSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Products', carroSchema);
+module.exports = mongoose.model('Products', productSchema);
