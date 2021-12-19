@@ -75,7 +75,12 @@ how to install docker-compose [here](https://docs.docker.com/compose/install/)
 ### Test Results:
  [Work in progress] No tests have been done yet.
 ### Build Procedures:
- [Work in progress] No configuration has been done yet
+
+ - Clone the repository
+ - Access eclothing folder
+ - Run yarn install and then yarn start commands
+ - After installing docker, repeat the same procedure for the server folder
+
 ### Problems:
  [Work in progress].
 ### Comments:
