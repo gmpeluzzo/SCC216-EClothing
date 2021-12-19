@@ -9,6 +9,7 @@ router.post('/add', (req, res, next) => {
     id: req.body.id,
     name: req.body.name,
     price: req.body.price,
+    quantity: req.body.quantity,
     description: req.body.description
   });
 
@@ -51,6 +52,7 @@ router.get('/', (req, res) => {
   });
 
   router.delete('/delete/:id', (req, res) => {
+    console.log(req);
     Product.findOneAndDelete({ _id: req.params.id })
       .then(product => {
         res.json({message: "Produto deletado com sucesso"});

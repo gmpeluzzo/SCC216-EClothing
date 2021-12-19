@@ -16,7 +16,11 @@ const productSchema = new Schema({
     require: true,
     default: 1
   },
-  descripion: {
+  quantity: {
+    type: Number,
+    default: 1
+  },
+  description: {
     type: String,
     default: "Esse produto não possui descrição."
   }

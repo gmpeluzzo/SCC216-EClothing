@@ -20,21 +20,37 @@ const FinishPurchase = styled.button`
 `;
 const handleClick = () => {
   const requestOptions = {
-      method: "POST",
+      method: "DELETE",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id: "1", name: "tereza", price: 20, description: "teste"})
   }
 
-  fetch("http://localhost:9000/products/add", requestOptions)
+  fetch("http://localhost:9000/products/delete/61bf85811362c368feab196f", requestOptions)
     .then(response => response.json())
     .then((result) => console.log(result))
     .catch((err) => console.log(err));
 };
 
+// const handleClick = () => {
+//   const requestOptions = {
+//       method: "PUT",
+//       headers: {"Content-Type": "application/json"},
+//       body: JSON.stringify({id: "1", name: "tereza", price: 20, description: "teste"})
+//   }
+
+//   fetch("http://localhost:9000/products/update/", requestOptions)
+//     .then(response => response.json())
+//     .then((result) => console.log(result))
+//     .catch((err) => console.log(err));
+// };
+
 const CheckoutPage = () => {
   const { cart, addProductToCart, removeProductFromCart } = useContext(
     ShopContext
   );
+
+  console.log(useContext(
+    ShopContext
+  ))
 
   return (
     <div className="checkoutEssentials" style={{ overflow: "auto" }}>
