@@ -6,30 +6,66 @@ import CartSummary from "./cart";
 import ShopContext from "../Context/shop-context";
 
 const FinishPurchase = styled.button`
-    color:white;
-    background-color:#13CE66;
-    font-weight: 600;
-    position:fixed;
-    bottom:12%;
-    right:7.5%;
-    width:15%;
-    height:7.5%;
-    font-size: 20px;
-    border:none;
-    border-radius: 4px;
-`
+  color: white;
+  background-color: #13ce66;
+  font-weight: 600;
+  position: fixed;
+  bottom: 12%;
+  right: 7.5%;
+  width: 15%;
+  height: 7.5%;
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+`;
+const handleClick = () => {
+  const requestOptions = {
+      method: "DELETE",
+      headers: {"Content-Type": "application/json"},
+  }
+
+  fetch("http://localhost:9000/products/delete/61bf85811362c368feab196f", requestOptions)
+    .then(response => response.json())
+    .then((result) => console.log(result))
+    .catch((err) => console.log(err));
+};
+
+// const handleClick = () => {
+//   const requestOptions = {
+//       method: "PUT",
+//       headers: {"Content-Type": "application/json"},
+//       body: JSON.stringify({id: "1", name: "tereza", price: 20, description: "teste"})
+//   }
+
+//   fetch("http://localhost:9000/products/update/", requestOptions)
+//     .then(response => response.json())
+//     .then((result) => console.log(result))
+//     .catch((err) => console.log(err));
+// };
 
 const CheckoutPage = () => {
-    const { cart, addProductToCart, removeProductFromCart } = useContext(ShopContext);
+  const { cart, addProductToCart, removeProductFromCart } = useContext(
+    ShopContext
+  );
 
-    return (
-        <div className="checkoutEssentials" style={{overflow:'auto'}}>
-            <CartSummary cart={cart} addProductToCart={addProductToCart} removeProductFromCart={removeProductFromCart}/>
-            <PaymentForm/>
-            <ShippingForm/>
-            <FinishPurchase>Confirm Purchase</FinishPurchase>
-        </div>
-    );
-}
+  console.log(useContext(
+    ShopContext
+  ))
+
+  return (
+    <div className="checkoutEssentials" style={{ overflow: "auto" }}>
+      <CartSummary
+        cart={cart}
+        addProductToCart={addProductToCart}
+        removeProductFromCart={removeProductFromCart}
+      />
+      <PaymentForm />
+      <ShippingForm />
+      <FinishPurchase onClick={() => handleClick()}>
+        Confirm Purchase
+      </FinishPurchase>
+    </div>
+  );
+};
 
 export default CheckoutPage;

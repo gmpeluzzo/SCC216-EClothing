@@ -62,12 +62,24 @@ export const MenuPanel = styled.div`
     position: absolute;
     background: white;
     Width: 300px;
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     border: 1px solid black;
     top: 0;
     transition: all 0.5s ease-out;
 
 `;
+
+export const MenuItem = styled.div`
+    width: 100%;
+    height: 30px;
+    display: flex;
+    background-color: red;
+    align-items: center;
+    text-align: left;
+
+`
 
 export const Text = styled.div`
     font-size: 40px;

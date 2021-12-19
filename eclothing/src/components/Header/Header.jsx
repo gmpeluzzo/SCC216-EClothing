@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-import { SearchInput, Container, MenuButton, LeftSideContainer, LogoutIcon, MenuPanel, Text } from './styles';
+import { SearchInput, Container, MenuButton, LeftSideContainer, LogoutIcon, MenuPanel, Text, MenuItem } from './styles';
 import MenuIcon from '../../images/hamburguer_menu.svg';
 import Logout from '../../images/logout.svg';
 import { useLocation, Link } from 'react-router-dom';
@@ -32,7 +32,11 @@ const Header = () => {
 
     return (
         <Container shouldDisplay={isLoginPage}>
-            <MenuPanel visibility={visibility} ref={ref}/>
+            <MenuPanel visibility={visibility} ref={ref}>
+                <MenuItem>
+                    Admin
+                </MenuItem>
+            </MenuPanel>
             <LeftSideContainer shouldDisplay={isLoginPage}>
                 <MenuButton imgUrl={MenuIcon} onClick={() => setVisibility(!visibility)}/>
                 <SearchInput/>
