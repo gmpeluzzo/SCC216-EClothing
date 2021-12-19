@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import productReducer from './state.reducer';
 
 const INTIIAL_STATE = {
     products: [],
