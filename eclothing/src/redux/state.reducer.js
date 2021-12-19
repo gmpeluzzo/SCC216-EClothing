@@ -1,18 +1,15 @@
-import { ADD_PRODUCT, UPDATE_PRODUCT, REMOVE_PRODUCT } from './state.types'
+import { ADD_PRODUCT, UPDATE_PRODUCT, REMOVE_PRODUCT } from "./state.types";
 
 const INTIIAL_STATE = {
-    products: []
-}
+  products: [],
+};
 
 const productReducer = (state = INTIIAL_STATE, action) => {
-    const {type, payload} = action;
-    switch(action.type){
-        case ADD_PRODUCT:
-        case REMOVE_PRODUCT:
-        case UPDATE_PRODUCT:            
-        default: 
-            return state;
-    }
-}
+  const { type, payload } = action;
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
 
 export default productReducer;

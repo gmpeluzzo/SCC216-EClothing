@@ -12,7 +12,7 @@ const productSchema = new Schema({
     require: true
   },
   price: {
-    type: Number,
+    type:  Number,
     require: true,
     default: 1
   },
@@ -23,6 +23,10 @@ const productSchema = new Schema({
   description: {
     type: String,
     default: "Esse produto não possui descrição."
+  },
+  image: {
+    type: String,
+    default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRunMfaHLpUnfOV-AjQtNdeH5pqqxwNMFUxxvnytE2-m5DoFyYekprT_p_i-vu84zCMjzA&usqp=CAU"
   }
 });
 
