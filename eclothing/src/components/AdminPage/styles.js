@@ -59,20 +59,20 @@ width: auto;
 margin: 3%;
 `
 
-export const ProdRemove = styled.input`
-font-size: 30px;
+export const ProdUpdate = styled.button`
+font-size: 14px;
 font-weight: bold;
 width: 20%;
 color: white;
-background-color: red;
+padding: 0 1% 0 1%;
+background-color:#13CE66;
 height: 45px;
-padding: 0 20px 0 20px;
 margin: 0 0 0 3%;
 border-radius: 4px;
 border:none;
 `
 
-export const ProdForm = styled.form`
+export const ProdForm = styled.div`
 display: flex;
 justify-content: space-between;
 width: 90%;
@@ -136,7 +136,6 @@ width: 15%;
 height: 50%;
 border: 2px solid #8492A6;
 display: flex;
-padding: 1% 1% 0 0;
 flex-direction: column;
 position: fixed;
 bottom: 5%;

@@ -57,7 +57,7 @@ export const SearchInput = styled.input`
 
 export const MenuPanel = styled.div`
     Height: 100vh;
-    z-index: 100;
+    z-index: 1000;
     left: ${props => props.visibility === true ? '0px' : '-300px'};
     position: absolute;
     background: white;
@@ -72,13 +72,18 @@ export const MenuPanel = styled.div`
 `;
 
 export const MenuItem = styled.div`
-    width: 100%;
-    height: 30px;
+    padding: 0 0 0 5%;
+    color: white;
+    width: 95%;
+    height: 40px;
     display: flex;
-    background-color: red;
+    background-color: #13CE66;
+    font-weight: bold;
+    font-size: 21px;
     align-items: center;
-    text-align: left;
-
+    text-align: center;
+    margin: 2% 0 0 0;
+    border: none;
 `
 
 export const Text = styled.div`
