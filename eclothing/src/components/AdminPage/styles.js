@@ -7,7 +7,6 @@ margin: 0 0 0 20px;
 border: 2px solid #8492A6;
 display: flex;
 align-items: center;
-padding: 1% 1% 0 0;
 flex-direction: column;
 position: fixed;
 bottom: 5%;
@@ -26,7 +25,6 @@ overflow: auto;
 export const ProdName = styled.label`
 width: 100%;
 font-size: 21px;
-padding: 0 20px 0 20px;
 `
 
 export const MediumText = styled.input`
@@ -39,11 +37,9 @@ border-radius: 4px;
 `
 
 export const BigText = styled.input`
-width: 85%;
-margin: 0 2% 0 0;
+width: 95%;
 font-size: 16px;
 height: 40px;
-padding: 0 20px 0 20px;
 border-radius: 4px;
 `
 
@@ -57,7 +53,8 @@ border-radius: 4px;
 `
 
 export const ProdImg = styled.img`
-height: 50%;
+height: 60px;
+width: 60px;
 width: auto;
 margin: 3%;
 `
@@ -70,7 +67,7 @@ color: white;
 background-color: red;
 height: 45px;
 padding: 0 20px 0 20px;
-margin: 3%;
+margin: 0 0 0 3%;
 border-radius: 4px;
 border:none;
 `
@@ -80,7 +77,7 @@ display: flex;
 justify-content: space-between;
 width: 90%;
 font-size: 16px;
-height: 20%;
+height: 90px;
 left: 5%;
 flex-direction: row;
 align-items: center;
@@ -94,20 +91,19 @@ export const AddButton = styled.input`
     padding: 0 1.5% 0 1.5%;
     width: 20%;
     height: 45px;
-    margin: 3%;
+    margin: 0 0 0 3%;
     border:none;
     border-radius: 4px;
 `
 
 export const SelectImage = styled.input`
-    color:white;
-    background-color:#13CE66;
-    font-size: 19px;
+    color: white;
+    background-color: #13CE66;
+    font-size: 16px;
     font-weight: bold;
-    padding: 0 3px 0 3px;
-    width: 20%;
+    width: 60px;
     height: 45px;
-    margin: 2%;
+    margin: 3%;
     border:none;
     border-radius: 4px;
 `
@@ -115,7 +111,7 @@ export const SelectImage = styled.input`
 export const ManagementHeader = styled.div`
 display: flex;
 justify-content: space-between;
-width: 85%;
+width: 90%;
 font-size: 21px;
 font-weight: bold;
 flex-direction: row;

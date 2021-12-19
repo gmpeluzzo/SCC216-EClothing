@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 
 import ShopContext from "./shop-context";
 import { shopReducer, ADD_PRODUCT, REMOVE_PRODUCT } from "./reducers";
+import products from "../../products";
 
 const GlobalState = props => {
 
@@ -20,6 +21,7 @@ const GlobalState = props => {
   return (
     <ShopContext.Provider
       value={{
+        products: products,
         cart: cartState.cart,
         addProductToCart,
         removeProductFromCart,

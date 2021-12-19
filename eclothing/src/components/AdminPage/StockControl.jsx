@@ -6,6 +6,9 @@ import { MediumText, ProdForm, ProdName, ProdRemove, SmallText, ManagementWrappe
 const ProductControl = (props) => {
     const { image, name, price } = props.product;
 
+    const removeProduct = () => {
+    }
+
     return (
         <ProdForm>
             <ProdName>{name}</ProdName>
@@ -13,14 +16,14 @@ const ProductControl = (props) => {
             <MediumText type="text" placeholder={price}/>
             <ProdImg src={image}/>
             <SmallText type="text" placeholder="0%"/>
-            <ProdRemove type="button" value="X"/>
+            <ProdRemove type="button" value="X" onClick={removeProduct}/>
         </ProdForm>
     );
 }
 
 const AddProduct = () => {
     const selectImageHandler = () => {
-        document.querySelector('.selectImage').click()
+        document.querySelector('.selectImage').value = window.prompt('\nInsert image URL\n\n')
     }
 
     return (
@@ -31,7 +34,7 @@ const AddProduct = () => {
             <SelectImage type="button" value="Select" onClick={selectImageHandler}/>
             <SmallText type="text" placeholder="0%"/>
             <AddButton type="submit" value="Add"/>
-            <input class="selectImage" type="file" hidden/>
+            <input className="selectImage" type="text" hidden/>
         </ProdForm>
     );
 }
