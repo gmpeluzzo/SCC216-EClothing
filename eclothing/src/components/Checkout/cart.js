@@ -12,6 +12,9 @@ position: fixed;
 top: 15%;
 left: 5%;
 overflow:auto;
+display: flex;
+flex-direction: column;
+align-items: center;
 `
 
 const CartSummary = ({cart, addProductToCart, removeProductFromCart}) => {

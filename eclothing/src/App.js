@@ -12,6 +12,7 @@ import ProductDetails from './components/ProductDetails';
 import CheckoutPage from './components/Checkout';
 import product from './products';
 import GlobalState from './components/Context/GlobalState';
+import AdminPage from './components/AdminPage';
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -23,6 +24,7 @@ const AppRoutes = () => {
     {path: '/product/4', element: <ProductDetails product={product[6]}/>},
     {path: '/product/5', element: <ProductDetails product={product[7]}/>},
     {path: '/product/checkout', element: <CheckoutPage/>},
+    {path: '/admin', element: <AdminPage/>}
   ]);
 
   return routes;

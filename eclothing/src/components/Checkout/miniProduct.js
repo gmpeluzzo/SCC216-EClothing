@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const ProductWrapper = styled.div`
 width: 90%;
-height: 15%;
+height: 60px;
 flex-direction: row;
 display: flex;
 left: 5%;
@@ -12,6 +12,7 @@ align-items: center;
 color: white;
 background-color: #13CE66;
 border-radius: 4px;
+margin: 1% 0 1% 0;
 `
 
 const Label = styled.label`
