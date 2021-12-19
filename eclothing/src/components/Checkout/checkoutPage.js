@@ -18,39 +18,23 @@ const FinishPurchase = styled.button`
   border: none;
   border-radius: 4px;
 `;
-const handleClick = () => {
-  const requestOptions = {
-      method: "DELETE",
-      headers: {"Content-Type": "application/json"},
-  }
-
-  fetch("http://localhost:9000/products/delete/61bf85811362c368feab196f", requestOptions)
-    .then(response => response.json())
-    .then((result) => console.log(result))
-    .catch((err) => console.log(err));
-};
-
-// const handleClick = () => {
-//   const requestOptions = {
-//       method: "PUT",
-//       headers: {"Content-Type": "application/json"},
-//       body: JSON.stringify({id: "1", name: "tereza", price: 20, description: "teste"})
-//   }
-
-//   fetch("http://localhost:9000/products/update/", requestOptions)
-//     .then(response => response.json())
-//     .then((result) => console.log(result))
-//     .catch((err) => console.log(err));
-// };
 
 const CheckoutPage = () => {
   const { cart, addProductToCart, removeProductFromCart } = useContext(
     ShopContext
   );
 
-  console.log(useContext(
-    ShopContext
-  ))
+  const completePurchase = () => {
+      fetch(`http://localhost:9000/products/purchase`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(cart)  
+      })
+        .then(response => response.json())
+        .then((result) => console.log(result))
+        .catch((err) => console.log(err));
+  }
+
 
   return (
     <div className="checkoutEssentials" style={{ overflow: "auto" }}>
@@ -61,7 +45,7 @@ const CheckoutPage = () => {
       />
       <PaymentForm />
       <ShippingForm />
-      <FinishPurchase onClick={() => handleClick()}>
+      <FinishPurchase onClick={completePurchase}>
         Confirm Purchase
       </FinishPurchase>
     </div>
