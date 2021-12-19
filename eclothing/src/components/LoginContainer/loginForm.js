@@ -49,6 +49,10 @@ const Label = styled.h2`
     font-weight: normal;
 `;
 
+const StyledLink = styled(Link)`
+    
+`
+
 const LoginForm = () => {
     const location = useLocation();
 

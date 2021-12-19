@@ -10,7 +10,8 @@ router.post('/add', (req, res, next) => {
     name: req.body.name,
     price: req.body.price,
     quantity: req.body.quantity,
-    description: req.body.description
+    description: req.body.description,  
+    image: req.body.image
   });
 
   product
@@ -36,10 +37,10 @@ router.get('/', (req, res) => {
 
   router.put('/update/:id', (req, res) => {
     const newProductSpec = {
-      marca: req.body.marca,
-      preco: req.body.preco,
-      quantidade: req.body.quantidade,
-      descricao: req.body.descricao
+      name: req.body.name,
+      price: req.body.price,
+      quantity: req.body.quantity,
+      description: req.body.description
     }
 
     Product.findOneAndUpdate({_id: req.params.id}, newProductSpec, {new: true})
@@ -58,6 +59,20 @@ router.get('/', (req, res) => {
         res.json({message: "Produto deletado com sucesso"});
       })
       .catch(error => res.status(500).json(error));
+  });
+
+  router.post('/purchase', (req, res, next) => {
+    console.log(req.body)
+    const { cart } = req.body;
+    req.body.forEach(({ id, quantity }) => {
+      Product.findOneAndUpdate({ id: id }, { $inc: { quantity: -quantity } })
+      .then(result => {
+        res.status(202).json({message: "produtos atualizados com sucesso."});
+      })
+      .catch(error => {
+        res.status(500).json(error);
+      });
+    })
   });
 
 module.exports = router;
