@@ -112,7 +112,7 @@ const ProdManagement = () => {
 const AdminPage = () => {
 
     return (
-        <div>
+        <div style={{height: "calc(100vh - 85px)"}}>
             <AdminButton style={{top: '15%'}}>Update Stock</AdminButton>
             <StyledLink to={'/carousel'}>
                 <AdminButton style={{top: '25%'}}>Back To Store</AdminButton>

@@ -37,7 +37,7 @@ const CheckoutPage = () => {
 
 
   return (
-    <div className="checkoutEssentials" style={{ overflow: "auto" }}>
+    <div className="checkoutEssentials" style={{ overflow: "auto", display: "flex", height: "calc(100vh - 85px)" }}>
       <CartSummary
         cart={cart}
         addProductToCart={addProductToCart}
