@@ -65,7 +65,7 @@ router.get('/', (req, res) => {
     console.log(req.body)
     const { cart } = req.body;
     req.body.forEach(({ id, quantity }) => {
-      Product.findOneAndUpdate({ id: id }, { $inc: { quantity: -quantity } })
+      Product.findOneAndUpdate({ _id: id }, { $inc: { quantity: -quantity } })
       .then(result => {
         res.status(202).json({message: "produtos atualizados com sucesso."});
       })
