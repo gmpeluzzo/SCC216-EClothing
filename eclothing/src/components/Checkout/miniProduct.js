@@ -47,8 +47,8 @@ const Image = styled.img`
 
 const MiniProduct = (props) => {
     const { id, image, name, price, quantity } = props.product;
-    const { addToCartHandler, removeFromCartHandler} = props
-
+    const { addToCartHandler, removeFromCartHandler, available} = props
+    console.log(available)
     return (
         <ProductWrapper>
             <Image src={image}/>
@@ -57,7 +57,9 @@ const MiniProduct = (props) => {
             <ControlQuantity>
                 <QuantityButtons onClick={() => removeFromCartHandler(id)}>-</QuantityButtons>
                 <Label>{quantity}</Label>
-                <QuantityButtons onClick={() => addToCartHandler(id)}>+</QuantityButtons>
+                {available &&
+                (<QuantityButtons onClick={() => addToCartHandler(id)}>+</QuantityButtons>)
+                }
             </ControlQuantity>
         </ProductWrapper>
     )

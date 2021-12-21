@@ -17,7 +17,12 @@ flex-direction: column;
 align-items: center;
 `
 
-const CartSummary = ({cart, addProductToCart, removeProductFromCart}) => {
+const CartSummary = ({products, cart, addProductToCart, removeProductFromCart}) => {
+    const stockCheck = (id) => {
+        const productInCart = cart.find(e => e.id === id)
+        const productInStock = products[id]
+        return productInStock && productInStock.stock > productInCart.quantity
+    }
 
     const removeFromCartHandler = (id) => {
         removeProductFromCart(id)
@@ -29,7 +34,7 @@ const CartSummary = ({cart, addProductToCart, removeProductFromCart}) => {
 
     return (
         <SummaryWrapper>
-            {cart.map(product => <MiniProduct product={product} addToCartHandler={addToCartHandler} removeFromCartHandler={removeFromCartHandler}/>)}
+            {cart.map(product => <MiniProduct product={product} addToCartHandler={addToCartHandler} removeFromCartHandler={removeFromCartHandler} available={stockCheck(product.id)}/>)}
         </SummaryWrapper>
     );
 }

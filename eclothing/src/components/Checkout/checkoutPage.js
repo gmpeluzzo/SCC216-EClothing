@@ -20,7 +20,7 @@ const FinishPurchase = styled.button`
 `;
 
 const CheckoutPage = () => {
-  const { cart, addProductToCart, removeProductFromCart } = useContext(
+  const { products, cart, addProductToCart, removeProductFromCart } = useContext(
     ShopContext
   );
 
@@ -39,6 +39,7 @@ const CheckoutPage = () => {
   return (
     <div className="checkoutEssentials" style={{ overflow: "auto", display: "flex", height: "calc(100vh - 85px)" }}>
       <CartSummary
+        products={products}
         cart={cart}
         addProductToCart={addProductToCart}
         removeProductFromCart={removeProductFromCart}
