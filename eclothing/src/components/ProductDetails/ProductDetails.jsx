@@ -5,9 +5,10 @@ import ShopContext from "../Context/shop-context";
 
 const ProductDetails = ({productId}) => {
   const { addProductToCart, cart, products } = useContext(ShopContext)
-
   const product = products[productId];
-  console.log(product)
+  const productInCart = cart.find(e => e.id === product.id)
+  const isInStock = productInCart? product?.stock > productInCart.quantity : product?.stock > 0
+
   const [selectedSize, setSelectedSize] = useState("P")
 
   const addToCartHandler = () => {
@@ -29,7 +30,7 @@ const ProductDetails = ({productId}) => {
           </Sizes>
           <p style={Styles.thirdParagraph}>{product?.description}</p>
           <Link to={'/product/checkout'}>
-            <AddToCartButton onClick={addToCartHandler}>Add to Cart</AddToCartButton>
+            <AddToCartButton disabled={!isInStock} style={{backgroundColor: isInStock || ('silver')}} onClick={addToCartHandler}>{isInStock? 'Add to Cart' : 'Unavailable'}</AddToCartButton>
           </Link>
         </ProductDetailsDiv>
       </Product>
